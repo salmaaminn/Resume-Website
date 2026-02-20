@@ -15,8 +15,8 @@
     --accent: rgb(241, 169, 181);
     --bg: #edd5d5;
     --card: rgba(215, 135, 148, 0.292); 
-    --text: #1f2937;
-    --subtext: #6b7280;
+    --text: #4e374c;
+    --subtext: #866983;
 }
 
 * {
@@ -319,34 +319,58 @@ footer {
 }
 .projects-container {
     display: flex;
-    gap: 30px; /* space between columns */
-    flex-wrap: wrap; /* for smaller screens */
-    position: relative;
+    gap: 40px;
+    flex-wrap: wrap;
+    
+    max-width: 1200px;   /* controls total width */
+    margin: 0 auto;      /* centers whole section */
 }
+
 
 /* Left column with Tic-Tac-Toe */
 .projects-left {
-    flex: 1 1 400px; /* flexible width, min 400px */
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Right column with other projects */
-.projects-right {
     flex: 1 1 400px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* Divider styling */
-.projects-divider {
-    width: 2px;           /* thickness of the line */
-    background-color: var(--primary); /* color of the line */
-    align-self: stretch;   /* make it full height of the container */
-    margin: 0 15px;       /* spacing between divider and columns */
+
+/* Right column with other projects */
+.projects-right {
+    flex: 1 1 500px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* TWO columns */
+    gap: 20px;
 }
+
+
+/* Divider styling */
+
+.projects-dividerl {
+    background-color: var(--primary);
+    height: 5px;
+    width: 100vw;               /* full screen width */
+    position: relative;
+    left: 30%;
+    border-radius: 20px;
+    /* transform: translateX(-50%);  keeps it centered */
+}
+.projects-dividerl2 {
+    height: 5px;
+    background-color: var(--primary);
+
+    width: 100vw;               /* full screen width */
+    position: relative;
+    left: 0%;
+    border-radius: 20px;
+    /* transform: translateX(-50%);  keeps it centered */
+}
+
+
+
+
 
 .special-card {
     background-color: rgb(248, 210, 216); /* light pink for this card only */
@@ -498,7 +522,8 @@ window.addEventListener('scroll', () => {
                 <div class="card">
                     <h3>Tic-Tac-Toe AI with Minimax Algorithm</h3>
                     <span>2025</span>
-                    <p>Implemented the Minimax algorithm in C to create an optimal AI opponent using recursive functions and game theory concepts.</p>
+                    <p>Used C and the Minimax algorithm to implement an unbeatable AI opponent in a console-based game environment. Applied recursion and game tree evaluation to optimize decision-making performance.
+                    </p>
                 </div>
         
                 <div id="tic-tac-toe-wrapper">
@@ -520,33 +545,34 @@ window.addEventListener('scroll', () => {
         
             <!-- Divider -->
             <div class="projects-divider"></div>
-        
+             <div class="projects-dividerl2"></div>
             <!-- Right Column -->
             <div class="projects-right fade-in">
                 <div class="card">
                     <h3>Sokoban-style puzzle game</h3>
                     <span>2026</span>
-                    <p>Built backend to load and render game worlds, manage rooms/portals, and enable player navigation in a Sokoban-style puzzle game.
+                    <p>Used C and modular system design to implement the backend of a graph-based puzzle game. Built data structures for rooms, portals, and player navigation, integrating with an instructor-provided world generator library. Implemented rendering logic and room-to-room traversal using graph-based connections.
                     </p>
                 </div>
         
                 <div class="card">
-                    <h3>Mini Bug Tracking & Test Analytics System</h3>
-                    <span>2025</span>
-                    <p>Developed a console-based Java bug tracking system using ArrayList and HashMap to manage reports and log actions, reducing lookup time through efficient HashMap-based retrieval and organizing data with a modular, object-oriented class design.</p>
+                    <h3>Personal Resume Website</h3>
+                    <span>2026</span>
+                    <p>Built a responsive, interactive resume website using HTML, CSS, and JavaScript.
+                        Used HTML, CSS, and JavaScript to build a responsive, interactive resume website in a front-end web environment.  Implemented CSS animations, fade-in transitions, and dynamic skill components to enhance user experience and visual presentation. Deployed using GitHub Pages, leveraging Git for version control and continuous updates.</p>
                 </div>
         
                 <div class="card">
                     <h3>Expression Tree Calculator</h3>
                     <span>2025</span>
-                    <p>Implemented a binary expression tree to evaluate mathematical expressions with variables. Supports preorder, postorder, and inorder traversals, with robust error handling for syntax errors, undefined variables, and division by zero.
+                    <p>Used C and binary tree data structures to implement an expression tree calculator for evaluating mathematical expressions. Supported preorder, inorder, and postorder traversals for expression parsing. Implemented robust error handling for syntax errors, undefined variables, and division-by-zero cases.
                     </p>
                 </div>
 
                 <div class="card">
                     <h3>Student Records SQL Program</h3>
                     <span>2024</span>
-                    <p>Built a relational SQL database for student record management, utilizing advanced queries, filtering, sorting, and aggregation for efficient data analysis.</p>
+                    <p>Used SQL and relational database design principles to build a student record management system. Wrote queries using filtering, sorting, joins, and aggregation to support structured data analysis.  Designed normalized tables to maintain data integrity and reduce redundancy.</p>
                 </div>
             </div>
         </div>
@@ -572,7 +598,7 @@ window.addEventListener('scroll', () => {
             <div class="card special-card2">
                 <h3>Coding Competition Participant</h3>
                 <span>May 2025</span>
-                <p>Solved complex algorithm challenges under time constraints using C++.</p>
+                <p>Used C to solve time-constrained algorithmic challenges in a competitive programming <br>environment. Strengthening my ability to write clean, efficient code under pressure.</p>
             </div>
         </section>
     
@@ -586,7 +612,7 @@ window.addEventListener('scroll', () => {
             <div class="skills-grid">
                 <div class="card special-cardskill">
                     <h4>Languages</h4>
-                    <p>C, C++, Java, Python</p>
+                    <p>C, C++, Java, Python, SQL, HTML</p>
                 </div>
     
                 <div class="card special-cardskill">
