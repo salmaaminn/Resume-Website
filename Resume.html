@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salma Amin | Software Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --primary: #580000;
+    --accent: rgb(241, 169, 181);
+    --bg: #edd5d5;
+    --card: rgba(215, 135, 148, 0.292); 
+    --text: #1f2937;
+    --subtext: #6b7280;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ranade', sans-serif;
+    
+}
+
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical center */
+    align-items: center;     /* horizontal center */
+
+    height: 400px;
+    border-top: 40px solid var(--primary);
+    border-bottom: 40px solid var(--primary);
+    border-left: 120px solid var(--primary);
+    border-right: 120px solid var(--primary);
+    color: rgb(241, 169, 181);
+    padding: 60px 20px;
+    text-align: center;
+
+    background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url("https://i.pinimg.com/736x/8b/18/52/8b1852c6d4a7496cee5c497393efa1b8.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    
+}
+
+
+header h1 {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 3px;
+    font-size: 4.0rem;
+    font-weight: 500;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.contact a {
+    color: pink;
+    text-decoration: none;
+      /* 👈 this */
+    text-decoration: none;
+    margin: 0 10px;
+           /* 👈 adds space inside */
+   
+
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section {
+    margin-bottom: 60px;
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--primary);
+    padding-left: 10px;
+}
+
+.card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.card span {
+    font-size: 0.9rem;
+    color: var(--subtext);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.skill-category {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.skill-category h4 {
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+
+/* Left side (Skills) */
+
+
+.extracurricular-section {
+    flex: 2;              /* bigger left column */
+    background-color: #580000; /* ensures full burgundy left */
+    padding: 40px;
+
+    margin-top: 100px;
+    border-radius: 20px;
+}
+
+.experience-skills-wrapper {
+    display: flex;
+    gap: 60px;
+    margin: 0px;          /* remove extra margin */
+     
+    padding-top: 0px;
+    padding-right: 60px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+
+    width: 100vw;       /* full viewport width */
+    align-items: flex-start;
+    border-radius: 20px;
+    
+    position: relative;   /* enable top/left offsets */
+    top: -30px;           /* moves it 30px up */
+    transform: translateX(-50px);
+   
+}
+
+
+
+/* RIGHT SIDE — smaller, hugs edge */
+.extracurricular-section h2{
+    color: #edecd5; /* your desired color */
+}
+
+.skills-side {
+    flex: 1;         
+    background-color:rgb(202, 139, 149);
+  /* soft pink */
+    padding: 30px;
+    border-radius: 20px;
+    
+    /* Move left by ~10cm */
+    transform: translateX(-255px);
+    margin-top: 70px;
+
+}
+
+
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--subtext);
+    font-size: 0.9rem;
+}
+
+/* Tic-Tac-Toe Styles */
+#tic-tac-toe-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+}
+
+#tic-tac-toe {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    background-color: var(--primary);;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+#tic-tac-toe .cell {
+    background-color: #f3d2d2;
+    border-radius: 8px;
+    font-size: 3rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    transition: all 0.2s;
+}
+
+#tic-tac-toe .cell:hover {
+    transform: scale(1.1);
+    background-color: #edd5d5; 
+}
+
+#tic-tac-toe .cell span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+#ttt-message {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--primary);
+    min-height: 1.5em;
+    text-align: center;
+}
+
+#ttt-reset {
+    margin-top: 10px;
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: var(--primary);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#ttt-reset:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.wave-wrapper {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+}
+
+.wave-track {
+  display: flex;
+  width: max-content; /* 2x SVG width: 1440*2 */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.wave-svg {
+  width: 1440px; /* each SVG is 1440px wide */
+  height: 120%;
+  flex-shrink: 0;
+}
+
+.wave-contact {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  color: #f5f3d5;
+}
+
+.wave-contact a {
+  color: #f5f3d5;
+  text-decoration: none;
+}
+
+.wave-contact .divider {
+  margin: 0 12px;
+  opacity: 1;
+}
+.projects-container {
+    display: flex;
+    gap: 30px; /* space between columns */
+    flex-wrap: wrap; /* for smaller screens */
+    position: relative;
+}
+
+/* Left column with Tic-Tac-Toe */
+.projects-left {
+    flex: 1 1 400px; /* flexible width, min 400px */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Right column with other projects */
+.projects-right {
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Divider styling */
+.projects-divider {
+    width: 2px;           /* thickness of the line */
+    background-color: var(--primary); /* color of the line */
+    align-self: stretch;   /* make it full height of the container */
+    margin: 0 15px;       /* spacing between divider and columns */
+}
+
+.special-card {
+    background-color: rgb(248, 210, 216); /* light pink for this card only */
+}
+.special-card2 {
+    background-color: rgb(248, 210, 216); /* light pink for this card only */
+}
+
+.colored-rectangl2 {
+    width: 2000px;          /* rectangle width */
+    height: 900px;         /* rectangle height */
+    background-color: #580000; /* burgundy color */
+    
+    /* positioning */
+    position: absolute;    /* lets you place it freely */
+    top: 700;             /* distance from top of page */
+    left: 0px;           /* distance from left of page */
+
+}
+.special-cardskill {
+    background-color: #edd5d5; /* light pink for this card only */
+}
+
+.special-cardskill2 {
+    background-color: #edd5d5; /* light pink for this card only */
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* slight slide up */
+    animation: fadeInUp 3s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.languages-box {
+    position: absolute;      /* allows precise placement */
+    top: 555px;              /* adjust to match Education section vertical alignment */
+    right: 0;                /* sticks to right edge of screen */
+    width: 220px;            /* fixed width */
+    background-color: #580000; /* light pink or creamy neutral */
+    padding: 20px;
+    border-radius: 20px 0 0 20px; /* round only left corners */
+    box-shadow: -2px 2px 12px rgba(0,0,0,0.15);
+    z-index: 10;             /* ensures it sits above other content */
+}
+
+.languages-header {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.8rem;
+    font-weight: 590px;
+    margin-bottom: 20px;
+    
+    padding-left: 10px;
+    color: pink;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+    <header>
+        <h1>SALMA AMIN</h1>
+    </header>
+
+    <div class="wave-wrapper">
+        <div class="wave-track">
+
+          <svg viewBox="0 0 1440 150" preserveAspectRatio="none" class="wave-svg" transform="rotate(180)">
+            <path d="M0,60 C360,20 1080,100 1440,60 L1440,200 L0,200 Z" 
+                  fill="var(--primary)">
+            </path>
+          </svg>
+
+          <svg viewBox="0 0 1440 150" preserveAspectRatio="none" class="wave-svg" transform="rotate(180)">
+            <path d="M0,60 C360,20 1080,100 1440,60 L1440,200 L0,200 Z" 
+                  fill="var(--primary)">
+            </path>
+          </svg>
+      
+
+        <svg viewBox="0 0 1440 150" preserveAspectRatio="none" class="wave-svg"transform="rotate(180)">
+            <path d="M0,60 C360,20 1080,100 1440,60 L1440,200 L0,200 Z" 
+                  fill="var(--primary)">
+            </path>
+          </svg>
+        </div>
+      
+        <div class="wave-contact">
+           (226) 501-1138 <span class="divider">•</span> <a href="mailto:samin06@uoguelph.ca">samin06@uoguelph.ca</a>
+        </div>
+      </div>
+      
+      
+      
+      <script>
+     const waveTrack = document.querySelector('.wave-track');
+const waveWidth = 1440;
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const speed = 4; // faster
+  const offset = (scrollY * speed) % waveWidth;
+  waveTrack.style.transform = `translateX(-${offset}px)`;
+});
+      </script>
+      
+    
+<div class="container">
+
+    <!-- Education -->
+    <section class="section fade-in">
+        <h2>Education</h2>
+      
+            <h3>Bachelor of Computing, Computer Science</h3>
+            <span>University of Guelph | 2024 – Present</span>
+            <span><br>-Completing a minor in Business</span>
+            <span><br>-Entrance Scholarship in the amount of $7500</span>
+            
+
+        
+    </section>
+
+ <!-- Languages Box (Left Side) -->
+ <section class="languages-box fade-in">
+    <div class="languages-header">Languages</div>
+    <div class="card special-cardskill">
+        <p>English, Arabic</p>
+    </div>
+
+</section>
+
+
+    <!-- Projects -->
+    <section class="section fade-in">
+        <h2>Personal & Academic Projects</h2>
+    
+        <div class="projects-container">
+            <!-- Left Column -->
+            <div class="projects-left fade-in">
+                <div class="card">
+                    <h3>Tic-Tac-Toe AI with Minimax Algorithm</h3>
+                    <span>2025</span>
+                    <p>Implemented the Minimax algorithm in C to create an optimal AI opponent using recursive functions and game theory concepts.</p>
+                </div>
+        
+                <div id="tic-tac-toe-wrapper">
+                    <div id="tic-tac-toe">
+                        <div class="cell" data-index="0"></div>
+                        <div class="cell" data-index="1"></div>
+                        <div class="cell" data-index="2"></div>
+                        <div class="cell" data-index="3"></div>
+                        <div class="cell" data-index="4"></div>
+                        <div class="cell" data-index="5"></div>
+                        <div class="cell" data-index="6"></div>
+                        <div class="cell" data-index="7"></div>
+                        <div class="cell" data-index="8"></div>
+                    </div>
+                    <div id="ttt-message"></div>
+                    <button id="ttt-reset">Restart</button>
+                </div>
+            </div>
+        
+            <!-- Divider -->
+            <div class="projects-divider"></div>
+        
+            <!-- Right Column -->
+            <div class="projects-right fade-in">
+                <div class="card">
+                    <h3>Sokoban-style puzzle game</h3>
+                    <span>2026</span>
+                    <p>Built backend to load and render game worlds, manage rooms/portals, and enable player navigation in a Sokoban-style puzzle game.
+                    </p>
+                </div>
+        
+                <div class="card">
+                    <h3>Mini Bug Tracking & Test Analytics System</h3>
+                    <span>2025</span>
+                    <p>Developed a console-based Java bug tracking system using ArrayList and HashMap to manage reports and log actions, reducing lookup time through efficient HashMap-based retrieval and organizing data with a modular, object-oriented class design.</p>
+                </div>
+        
+                <div class="card">
+                    <h3>Expression Tree Calculator</h3>
+                    <span>2025</span>
+                    <p>Implemented a binary expression tree to evaluate mathematical expressions with variables. Supports preorder, postorder, and inorder traversals, with robust error handling for syntax errors, undefined variables, and division by zero.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Student Records SQL Program</h3>
+                    <span>2024</span>
+                    <p>Built a relational SQL database for student record management, utilizing advanced queries, filtering, sorting, and aggregation for efficient data analysis.</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+
+
+
+    <!-- Skills -->
+    <div class="experience-skills-wrapper">
+
+        <!-- Extracurricular (LEFT - bigger) -->
+        <section class="section extracurricular-section">
+            <h2>Extracurricular Experience</h2>
+    
+            <div class="card special-card">
+                <h3>Go Code Girl Event Volunteer</h3>
+                <span>March 2025</span>
+                <p>Taught core Python concepts (variables, loops, conditionals) to a group of 30+<Br>students, increasing their coding confidence.</p>
+            </div>
+            
+            <div class="card special-card2">
+                <h3>Coding Competition Participant</h3>
+                <span>May 2025</span>
+                <p>Solved complex algorithm challenges under time constraints using C++.</p>
+            </div>
+        </section>
+    
+
+        
+        <!-- Skills (RIGHT - smaller) -->
+
+        <section class="skills-side">
+            <h2>Technical Skills</h2>
+    
+            <div class="skills-grid">
+                <div class="card special-cardskill">
+                    <h4>Languages</h4>
+                    <p>C, C++, Java, Python</p>
+                </div>
+    
+                <div class="card special-cardskill">
+                    <h4>Data Structures & Algorithms</h4>
+                    <p>Linked Lists, Sorting Algorithms, Multi-dimensional Arrays, Minimax, K - Nearest Neighbors (KNN)</p>
+                </div>
+
+                <div class="card special-cardskill">
+                    <h4>Software Development</h4>
+                    <p>Git, Debugging, File I/O</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+
+
+    
+    
+
+
+
+
+</div>
+
+<footer>
+    © 2026 Salma Amin • Built with HTML & CSS
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const cells = document.querySelectorAll('#tic-tac-toe .cell');
+    const message = document.getElementById('ttt-message');
+    const resetBtn = document.getElementById('ttt-reset');
+
+    let board = Array(9).fill(null); // null = empty, 0 = X, 1 = O
+    let isAITurn = false;
+
+    cells.forEach((cell, i) => cell.addEventListener('click', () => playerMove(i)));
+    resetBtn.addEventListener('click', resetGame);
+
+    function playerMove(index) {
+        if (board[index] !== null || checkWinner() || isAITurn) return;
+        board[index] = 0; // X
+        updateBoard();
+        if (!checkWinner()) aiMove();
+    }
+
+    function aiMove() {
+        if (checkWinner()) return;
+        isAITurn = true;
+        setTimeout(() => {
+            const move = getBestMove(board);
+            if (move !== -1) board[move] = 1; // O
+            updateBoard();
+            checkWinner();
+            isAITurn = false;
+        }, 500);
+    }
+
+    function updateBoard() {
+    cells.forEach((cell, i) => {
+        if (board[i] === 0 && cell.textContent === "") {
+            cell.textContent = "X";
+        } 
+        else if (board[i] === 1 && cell.textContent === "") {
+            cell.textContent = "O";
+        }
+    });
+}
+
+
+    function checkWinner() {
+        const winnerVal = calculateWinner(board);
+        if (winnerVal !== null) {
+            message.textContent =
+                winnerVal === 0 ? 'You won!' :
+                winnerVal === 1 ? 'AI won!' :
+                'Draw!';
+            return true;
+        }
+        return false;
+    }
+
+    function resetGame() {
+    board = Array(9).fill(null);
+    cells.forEach(cell => cell.textContent = "");
+    message.textContent = '';
+    isAITurn = false;
+}
+
+
+    function getBestMove(currentBoard) {
+        let bestScore = -Infinity;
+        let move = -1;
+        for (let i = 0; i < 9; i++) {
+            if (currentBoard[i] === null) {
+                currentBoard[i] = 1;
+                const score = minimax(currentBoard, 0, false);
+                currentBoard[i] = null;
+                if (score > bestScore) {
+                    bestScore = score;
+                    move = i;
+                }
+            }
+        }
+        return move;
+    }
+
+    function minimax(boardState, depth, isMax) {
+        const result = calculateWinner(boardState);
+        if (result !== null) {
+            if (result === 1) return 10 - depth;
+            if (result === 0) return depth - 10;
+            if (result === 2) return 0;
+        }
+
+        if (isMax) {
+            let best = -Infinity;
+            for (let i = 0; i < 9; i++) {
+                if (boardState[i] === null) {
+                    boardState[i] = 1;
+                    best = Math.max(best, minimax(boardState, depth + 1, false));
+                    boardState[i] = null;
+                }
+            }
+            return best;
+        } else {
+            let best = Infinity;
+            for (let i = 0; i < 9; i++) {
+                if (boardState[i] === null) {
+                    boardState[i] = 0;
+                    best = Math.min(best, minimax(boardState, depth + 1, true));
+                    boardState[i] = null;
+                }
+            }
+            return best;
+        }
+    }
+
+    function calculateWinner(bd) {
+        const winLines = [
+            [0,1,2],[3,4,5],[6,7,8],
+            [0,3,6],[1,4,7],[2,5,8],
+            [0,4,8],[2,4,6]
+        ];
+        for (const [a,b,c] of winLines) {
+            if (bd[a] !== null && bd[a] === bd[b] && bd[a] === bd[c]) return bd[a];
+        }
+        if (bd.every(cell => cell !== null)) return 2; // Draw
+        return null;
+    }
+});
+</script>
+
+</body>
+</html>
